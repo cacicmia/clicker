@@ -1,5 +1,19 @@
-.cat {
-  max-width:100%;
-  width: auto;
+  .container {
+  display: flex;
+  flex-wrap:wrap;
 
+
+}
+.catDiv{
+width:49%;
+border: solid 1px #345;
+background-color: cyan ;
+}
+.catDiv>img {
+    padding: 10px;
+    max-width:400px;
+    max-height:400px;
+    }
+.catDiv>p {
+  text-align: center;
 }
