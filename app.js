@@ -31,6 +31,7 @@ class Cat {
   clickCount() {
 
     this.click++;
+    this.score = `Clicks to ${this.name}: ${this.click}`;
     this.reachScore.textContent = this.score;
   }
 
