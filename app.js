@@ -8,13 +8,6 @@ class Cat {
     this.reachImg = 0;
     this.reachScore= 0;
 
-
-
-  }
-  clickCount() {
-    this.click++;
-    let score= this.reachScore;
-    score.innerHTML = this.score;
   }
 
   makeHTML() {
@@ -31,10 +24,17 @@ class Cat {
     catDiv.append(pic);
     container.append(catDiv);
     this.reachImg = document.querySelector(`.${this.name}`);
-    this.reachScore = document.querySelector(`.${this.name}-score`);
-
+    this.reachScore = score;
+    this.reachImg.addEventListener('click', this.clickCount.bind(this));
 
   }
+  clickCount() {
+
+    this.click++;
+    this.reachScore.textContent = this.score;
+  }
+
+
 }
 
 const cat1 = new Cat('Cato', 'img/cat_b.jpg');
@@ -44,8 +44,3 @@ cats.push(cat1, cat2);
 cats.forEach(cat => {
   cat.makeHTML();
 });
-
-window.onload = ()=>{
-  cat1.reachImg.addEventListener('click', cat1.clickCount);
-  cat2.reachImg.addEventListener('click', cat2.clickCount);
-};
